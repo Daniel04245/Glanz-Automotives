@@ -1,3 +1,4 @@
+/* General Styling */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: rgba(248, 141, 112, 0.3);
@@ -7,11 +8,12 @@ body {
     height: 100vh;
     margin: 0;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center; /* Centering content horizontally */
+    align-items: center; /* Centering content vertically */
     position: relative;
 }
 
+/* Background Image */
 body::before {
     content: '';
     position: absolute;
@@ -27,6 +29,7 @@ body::before {
     z-index: -1;
 }
 
+/* Top Bar */
 .top-bar {
     position: absolute;
     top: 0;
@@ -39,6 +42,7 @@ body::before {
     z-index: 1;
 }
 
+/* Logo */
 .logo {
     width: 230px;
     height: 120px;
@@ -46,6 +50,7 @@ body::before {
     top: -8px;
 }
 
+/* Navigation Buttons */
 .nav-buttons {
     display: flex;
     justify-content: space-evenly;
@@ -67,6 +72,7 @@ body::before {
     border-radius: 5px;
 }
 
+/* Book Now Button */
 .btn-book-now {
     background-color: black;
     color: white;
@@ -83,15 +89,15 @@ body::before {
     background-color: #333;
 }
 
+/* Text Box */
 .text-box {
-    width: 438px; /* Set width as 438px */
-    height: 742px; /* Set height as 742px */
+    width: 438px;
+    height: 742px;
     margin-top: 75px;
     padding: 20px;
     background: none;
-    position: absolute;
-    left: 0;
-    margin-right: 20px; /* Add space between the text box and the image */
+    position: relative;
+    margin-right: 20px; /* Space between the text box and the image */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -117,14 +123,13 @@ body::before {
     margin-bottom: 20px;
 }
 
+/* Image Styling */
 .image1 {
-    width: 850px; 
+    width: 850px;
     height: 600px;
     object-fit: cover;
-    margin-top: 20px;
-    position: relative; /* Change to 'relative' if 'absolute' causes issues */
-    right: -550px; /* Ensure image is aligned properly */
+    position: relative;
     top: 150px;
+    margin-left: 20px; /* Space between the text and image */
     z-index: 0;
 }
-
