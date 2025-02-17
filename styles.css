@@ -118,13 +118,13 @@ body::before {
 }
 
 .image1 {
-    width: 850px; /* Adjusted width */
-    height: 600px; /* Adjusted height */
-    object-fit: cover; /* Ensures the image fills the space without distortion */
-    margin-top: 20px; /* Adds space between the text and the image */
-    position: absolute; /* Ensure the image is positioned absolutely */
-    right: 50px; /* Move the image 150px further to the right */
-    top: 150px; /* Adjust this value to move the image down */
+    width: 850px; 
+    height: 600px;
+    object-fit: cover;
+    margin-top: 20px;
+    position: relative; /* Change to 'relative' if 'absolute' causes issues */
+    right: 0; /* Ensure image is aligned properly */
+    top: 150px;
     z-index: 0;
 }
 
