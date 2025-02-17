@@ -39,7 +39,6 @@ body::before {
     align-items: center;
     padding: 20px;
     z-index: 10;
-    background-color: rgba(255, 255, 255, 0.8);
 }
 
 /* Logo */
