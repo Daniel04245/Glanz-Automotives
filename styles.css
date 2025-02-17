@@ -5,11 +5,10 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     display: flex;
-    justify-content: center; /* Centering content horizontally */
-    align-items: center; /* Centering content vertically */
+    flex-direction: column;
     position: relative;
 }
 
@@ -31,7 +30,7 @@ body::before {
 
 /* Top Bar */
 .top-bar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -39,7 +38,8 @@ body::before {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    z-index: 1;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 /* Logo */
@@ -55,6 +55,7 @@ body::before {
     display: flex;
     justify-content: space-evenly;
     width: 75%;
+    align-items: center;
 }
 
 .nav-button {
@@ -83,21 +84,32 @@ body::before {
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s;
+    text-decoration: none;
 }
 
 .btn-book-now:hover {
     background-color: #333;
 }
 
+/* Main container for content */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 180px; /* Space for the top bar */
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Text Box */
 .text-box {
     width: 438px;
-    height: 742px;
-    margin-top: 75px;
     padding: 20px;
     background: none;
-    position: relative;
-    margin-right: 20px; /* Space between the text box and the image */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -106,8 +118,7 @@ body::before {
     z-index: 1;
 }
 
-.text-box h1,
-.text-box p {
+.text-box h1, .text-box p {
     color: black;
 }
 
@@ -123,13 +134,52 @@ body::before {
     margin-bottom: 20px;
 }
 
-/* Image Styling */
+/* Image Styling - Note the lowercase 'i' in class name */
 .image1 {
     width: 850px;
     height: 600px;
     object-fit: cover;
-    position: relative;
-    top: 150px;
-    margin-left: 20px; /* Space between the text and image */
     z-index: 0;
+    max-width: 100%;
+    margin-left: 20px; /* Space between text and image */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .text-box {
+        width: 100%;
+        max-width: 600px;
+        margin-bottom: 40px;
+    }
+    
+    .image1 {
+        margin-left: 0;
+        width: 100%;
+        max-width: 850px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-buttons {
+        width: auto;
+        flex-wrap: wrap;
+    }
+    
+    .top-bar {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .logo {
+        margin-bottom: 10px;
+    }
+    
+    .main-container {
+        margin-top: 240px;
+    }
 }
