@@ -123,7 +123,7 @@ body::before {
     object-fit: cover;
     margin-top: 20px;
     position: relative; /* Change to 'relative' if 'absolute' causes issues */
-    right: 0; /* Ensure image is aligned properly */
+    right: -550px; /* Ensure image is aligned properly */
     top: 150px;
     z-index: 0;
 }
