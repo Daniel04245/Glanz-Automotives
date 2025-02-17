@@ -37,6 +37,7 @@ body::before {
     align-items: center;
     padding: 20px;
     z-index: 1;
+    background-color: transparent;
 }
 
 .logo {
