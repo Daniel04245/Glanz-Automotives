@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation Page</title>
+    <!-- Bootstrap CSS (Local) -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="confirmation.css">
+</head>
+<body>
+    <!-- Navigation container -->
+    <div class="top-bar">
+        <img src="logo.png" alt="Logo" class="logo">
+
+        <!-- Navigation buttons container -->
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="service.html" class="nav-button">Services</a>
+            <a href="advisors.html" class="nav-button">Advisors</a>
+            <a href="contact-us.html" class="nav-button">Contact Us</a>
+            <a href="contact-info.html" class="btn-book-now">Book Now</a>
+        </div>
+    </div>
+
+    <!-- Booking Confirmation Message -->
+    <div class="confirmation-message">
+        <h2>Booking Confirmed</h2>
+    </div>
+
+    <div class="thank-you-message">
+        <p>Thank you for booking an appointment with us. We look forward to providing you with an exceptional experience!</p>
+    </div>
+
+    <!-- Appointment Details and Image Container -->
+    <div class="appointment-container">
+        <!-- Booking Details -->
+        <div class="booking-details">
+            <h3>Appointment Details:</h3>
+            <p><strong>Date:</strong> <span id="booking-date"></span></p>
+            <p><strong>Time:</strong> <span id="booking-time"></span></p>
+            <p><strong>Service:</strong> <span id="booking-service"></span></p>
+            <p><strong>Advisor:</strong> <span id="booking-advisor"></span></p>
+        </div>
+
+        <!-- Image Section -->
+        <div class="appointment-image">
+            <img src="confirmation1.jpeg" alt="Appointment" class="appointment-img">
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Populate the confirmation page with booking details from localStorage
+        document.addEventListener("DOMContentLoaded", function () {
+            const bookingDate = localStorage.getItem("bookingDate");
+            const bookingTime = localStorage.getItem("bookingTime");
+            const bookingService = localStorage.getItem("bookingService");
+            const bookingAdvisor = localStorage.getItem("bookingAdvisor");
+
+            document.getElementById("booking-date").textContent = bookingDate;
+            document.getElementById("booking-time").textContent = bookingTime;
+            document.getElementById("booking-service").textContent = bookingService;
+            document.getElementById("booking-advisor").textContent = bookingAdvisor;
+        });
+    </script>
+    <!-- Bootstrap JS (Local) -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

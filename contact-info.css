@@ -1,0 +1,140 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(248, 141, 112, 0.3);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('logo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 96% auto;
+    opacity: 0.20;
+    z-index: -1;
+}
+
+.top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    z-index: 1;
+}
+
+.logo {
+    width: 230px;
+    height: 120px;
+    position: relative;
+    top: -8px;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 75%;
+}
+
+.nav-button {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.btn-book-now {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-book-now:hover {
+    background-color: #333;
+}
+
+/* Style for the info box below the navbar */
+.info-box {
+    margin-top: 170px; /* Adjust this value based on navbar height */
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 800px;
+    margin-left: 400px;
+    margin-right: auto;
+}
+
+.info-box p {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+
+/* Style for the form below the info box */
+.user-info-form {
+    margin-top: 280px; /* Adjust this to move the form down */
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    margin-left: -1850px;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Style for the Next button */
+.next-button-container {
+    position: absolute;
+    bottom: 20px;  /* Move it 20px above the bottom edge of the page */
+    right: 20px;   /* Move it 20px from the right edge of the page */
+}
+
+button.btn-next {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+
+
+

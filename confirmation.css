@@ -1,0 +1,148 @@
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(248, 141, 112, 0.3);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+}
+
+/* Background Logo Watermark */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('logo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 96% auto;
+    opacity: 0.20;
+    z-index: -1;
+}
+
+/* Navigation Bar */
+.top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    z-index: 1;
+}
+
+/* Logo */
+.logo {
+    width: 230px;
+    height: 120px;
+    position: relative;
+    top: -8px;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 75%;
+}
+
+.nav-button {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+/* Book Now Button */
+.btn-book-now {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-book-now:hover {
+    background-color: #333;
+}
+
+/* Booking Confirmation Message */
+.confirmation-message {
+    text-align: center;
+    margin-top: 170px; /* Adjust to position */
+    margin-left: 650px;
+    font-size: 36px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Thank You Message */
+.thank-you-message {
+    text-align: center;
+    margin-top: 250px;
+    margin-left: -725px;
+    font-size: 20px;
+    color: #333;
+}
+
+/* Appointment Container */
+.appointment-container {
+    display: flex;
+    position: absolute;
+    top: 320px;
+    left: 20px;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Appointment Details */
+.booking-details {
+    height: 400px;
+    width: 450px; /* Increased width */
+    font-size: 18px;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    line-height: 1.8;
+}
+
+/* Add spacing between details */
+.booking-details p {
+    margin-bottom: 15px;
+}
+
+/* Appointment Image */
+.appointment-image {
+    width: 900px;
+    height: 400px;
+}
+
+.appointment-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}

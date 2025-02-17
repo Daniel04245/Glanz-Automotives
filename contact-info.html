@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact-Info</title>
+    <!-- Bootstrap CSS (Local) -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="contact-info.css">
+</head>
+<body>
+    <!-- Navigation container -->
+    <div class="top-bar">
+        <img src="logo.png" alt="Logo" class="logo">
+
+        <!-- Navigation buttons container -->
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="service.html" class="nav-button">Services</a>
+            <a href="advisors.html" class="nav-button">Advisors</a>
+            <a href="contact-us.html" class="nav-button">Contact Us</a>
+            <a href="contact-info.html" class="btn-book-now">Book Now</a>
+        </div>
+    </div>
+
+    <!-- Textbox container below the navbar -->
+    <div class="info-box">
+        <p>To ensure your satisfaction and the successful completion of your booking, we kindly ask for the following required information.</p>
+    </div>
+
+    <!-- Form for user information -->
+    <div class="user-info-form">
+        <form action="booking.html" method="POST">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="preferredName">Preferred Name:</label>
+                <input type="text" id="preferredName" name="preferredName" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" required>
+            </div>
+
+            <!-- Next Button -->
+            <div class="next-button-container">
+                <button type="submit" class="btn btn-next">Next</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <!-- Bootstrap JS (Local) -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

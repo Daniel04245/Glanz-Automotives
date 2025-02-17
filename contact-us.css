@@ -1,0 +1,164 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(248, 141, 112, 0.3);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('logo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 96% auto;
+    opacity: 0.20;
+    z-index: -1;
+}
+
+.top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    z-index: 1;
+}
+
+.logo {
+    width: 230px;
+    height: 120px;
+    position: relative;
+    top: -8px;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 75%;
+}
+
+.nav-button {
+    color: black;
+    font-size: 16px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.btn-book-now {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-book-now:hover {
+    background-color: #333;
+}
+
+/* Contact Us Section */
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 80%;
+    align-items: flex-start;
+    padding: 20px;
+    margin-top: 150px;
+    margin-left: -250px;
+    margin-right: auto;
+}
+
+.contact-text {
+    flex: 1;
+    text-align: center;
+}
+
+.contact-text h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.contact-details {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    top: 80px; /* Adjust this to move the box lower */
+    left: 50px; /* Adjust this to move the box to the right */
+    max-width: 375px; /* Limit the width of the contact details */
+}
+
+.office-details,
+.opening-hours {
+    margin-bottom: 20px;
+}
+
+.opening-hours {
+    margin-top: 70px; /* Add extra space between Office Details and Opening Hours */
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff5733;
+}
+
+.contact-image {
+    text-align: center; /* Center the image */
+    margin-top: 250px; /* Move the image further down */
+    margin-left: 50px; /* Move the image to the right */
+}
+
+.contact-image img {
+    width: 850px; /* 10 times bigger (you can adjust this if needed) */
+    height: 500px; /* Adjust height as needed */
+    display: inline-block;
+}
+
+
+

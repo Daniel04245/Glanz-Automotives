@@ -1,0 +1,130 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(248, 141, 112, 0.3);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('logo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 96% auto;
+    opacity: 0.20;
+    z-index: -1;
+}
+
+.top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    z-index: 1;
+}
+
+.logo {
+    width: 230px;
+    height: 120px;
+    position: relative;
+    top: -8px;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 75%;
+}
+
+.nav-button {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.btn-book-now {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-book-now:hover {
+    background-color: #333;
+}
+
+.text-box {
+    width: 438px; /* Set width as 438px */
+    height: 742px; /* Set height as 742px */
+    margin-top: 75px;
+    padding: 20px;
+    background: none;
+    position: absolute;
+    left: 0;
+    margin-right: 20px; /* Add space between the text box and the image */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+}
+
+.text-box h1,
+.text-box p {
+    color: black;
+}
+
+.text-box h1 {
+    font-size: 36px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.text-box p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.image1 {
+    width: 850px; /* Adjusted width */
+    height: 600px; /* Adjusted height */
+    object-fit: cover; /* Ensures the image fills the space without distortion */
+    margin-top: 20px; /* Adds space between the text and the image */
+    position: absolute; /* Ensure the image is positioned absolutely */
+    right: 50px; /* Move the image 150px further to the right */
+    top: 150px; /* Adjust this value to move the image down */
+    z-index: 0;
+}
+

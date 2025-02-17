@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Page</title>
+    <!-- Bootstrap CSS (Local) -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="booking.css">
+    <style>
+        /* Moves the form down and to the left */
+        .booking-form {
+            margin-top: 80px; /* Adjusts vertical position */
+            margin-left: 50px; /* Adjusts horizontal position */
+            width: 300px; /* Adjust width if needed */
+        }
+
+        /* Styles the Submit button */
+        .btn-submit {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            position: fixed; /* Ensures it's always at the bottom right */
+            bottom: 20px;
+            right: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation container -->
+    <div class="top-bar">
+        <img src="logo.png" alt="Logo" class="logo">
+
+        <!-- Navigation buttons container -->
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="service.html" class="nav-button">Services</a>
+            <a href="advisors.html" class="nav-button">Advisors</a>
+            <a href="contact-us.html" class="nav-button">Contact Us</a>
+            <a href="contact-info.html" class="btn-book-now">Book Now</a>
+        </div>
+    </div>
+
+    <!-- Information Box under navbar -->
+    <div class="info-box">
+        <p>Please provide the preferred time, date, type of service, and advisor you would like to schedule.</p>
+    </div>
+
+    <!-- Booking Form (Categories) -->
+    <form id="bookingForm" class="booking-form">
+        <!-- Date Selection -->
+        <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" id="date" class="form-control" required>
+        </div>
+
+        <!-- Time Selection -->
+        <div class="form-group">
+            <label for="time">Time:</label>
+            <input type="time" id="time" class="form-control" required>
+        </div>
+
+        <!-- Service Name Dropdown -->
+        <div class="form-group">
+            <label for="service">Service Name:</label>
+            <select id="service" class="form-control" required>
+                <option value="first">Choose Service Type</option>
+                <option value="Purchase a Vehicle">Purchase a vehicle</option>
+                <option value="Sell Your Vehicle">Sell your vehicle</option>
+                <option value="Rent a Vehicle">Rent a vehicle</option>
+            </select>
+        </div>
+
+        <!-- Advisor Dropdown -->
+        <div class="form-group">
+            <label for="advisor">Choose an Advisor:</label>
+            <select id="advisor" class="form-control" required>
+                <option value="first">Choose Advisor</option>
+                <option value="Arthur Leywin">Arthur Leywin</option>
+                <option value="Kayden Break">Kayden Break</option>
+            </select>
+        </div>
+    </form>
+
+    <!-- Submit Button (Bottom Right) -->
+    <button class="btn-submit" type="button" onclick="validateForm()">Submit</button>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const dateInput = document.getElementById("date");
+        
+        // Set min date to today
+        const today = new Date();
+        dateInput.min = today.toISOString().split("T")[0];
+
+        // Add event listener to disable Sundays
+        dateInput.addEventListener("change", function() {
+            const day = new Date(this.value).getUTCDay();
+            if (day === 0) { // 0 = Sunday
+                this.value = '';
+                alert("Our store is closed on Sundays. Please select another day.");
+            }
+        });
+
+        // Disable Sundays in the datepicker
+        dateInput.addEventListener("input", function(e) {
+            const day = new Date(this.value).getUTCDay();
+            if (day === 0) { // 0 = Sunday
+                this.value = '';
+                alert("Our store is closed on Sundays. Please select another day.");
+            }
+        });
+
+        // Add custom validation using the beforeinput event
+        dateInput.addEventListener("beforeinput", function(e) {
+            const proposedDate = new Date(e.target.value);
+            if (proposedDate.getUTCDay() === 0) { // 0 = Sunday
+                e.preventDefault();
+            }
+        });
+    });
+
+    function validateForm() {
+        let date = document.getElementById("date").value;
+        let time = document.getElementById("time").value;
+        let service = document.getElementById("service").value;
+        let advisor = document.getElementById("advisor").value;
+
+        if (!date || !time || service === "first" || advisor === "first") {
+            alert("Please fill out all fields before submitting.");
+            return false;
+        }
+
+        let selectedTime = time.split(":");
+        let hour = parseInt(selectedTime[0], 10);
+        let minute = parseInt(selectedTime[1], 10);
+
+        if (hour < 8 || hour >= 20) {
+            alert("The company is open from 8:00 AM to 8:00 PM. Please select a valid time.");
+            return false;
+        }
+
+        // Store the appointment details in localStorage
+        localStorage.setItem("bookingDate", date);
+        localStorage.setItem("bookingTime", time);
+        localStorage.setItem("bookingService", service);
+        localStorage.setItem("bookingAdvisor", advisor);
+
+        window.location.href = "confirmation.html";
+    }
+    </script>
+    <!-- Bootstrap JS (Local) -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
